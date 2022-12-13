@@ -6,8 +6,8 @@ const NavBar = () => {
     const navigation = [
         { name: 'Home', href: '/', current: true },
         { name: 'Productos', href: '/productos', current: false },
-        { name: 'Projects', href: '#', current: false },
-        { name: 'Calendar', href: '#', current: false },
+        { name: 'Categorias', href: 'categorias', current: false },
+        { name: 'Nosotros', href: 'nosotros', current: false },
       ]
     function classNames(...classes) {
         return classes.filter(Boolean).join(' ')
