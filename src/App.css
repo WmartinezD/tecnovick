@@ -28,10 +28,95 @@
   color: #61dafb;
 }
 
+
+.img {
+
+  display: flex;
+  justify-content: center;
+}
+.grilla {
+  display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 90%;
+    margin: auto;
+    padding: 2rem;
+    justify-content: center;
+}
+.grilla .card{
+  max-width: 200px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid gray;
+}
+.grilla .card .img{
+  background-color: aquamarine;
+  height: 300px;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+/*pagina de producto*/
+.contedenorProduct {
+  display: flex;
+  max-width: 90%;
+  margin: auto;
+  gap: 10px;
+  padding: 1rem;
+}
+
+
+
+@media screen and (max-width:768px){
+  .contedenorProduct{
+    flex-direction: column;
+  }
+  .contedenorProduct .left img {
+    max-width: 100%;
+  }
+}
+
+.contedenorProduct .right .category {
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.contedenorProduct .right {
+  text-align: left;
+  padding: 1rem;
+}
+
+.contedenorProduct .right .title h1 {
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.contedenorProduct .right .description {
+  border-top: 1px solid gray;
+  font-size: 13px;
+  padding: 10px 0px;
+
+}
+
+
+.price {
+
+  color: blue;
+  font-size: 16px;
+}
+
+.buybutton button,
+.buybutton a {
+  background-color: blue;
+  color: white;
+  font-size: 13px;
+  padding: 5px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
