@@ -1,8 +1,11 @@
-import React, { Fragment } from "react"
+import React, { Fragment, useContext } from "react"
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import CartWidget from "./CartWidget"
-const NavBar = () => {
+import { StoreContext } from "../App"
+const NavBar = ({color,setcolor,cart,setcart}) => {
+  const contexto = useContext(StoreContext)
+  console.log (contexto)
     const navigation = [
         { name: 'Home', href: '/', current: true },
         { name: 'Productos', href: '/productos', current: false },
@@ -16,6 +19,7 @@ const NavBar = () => {
     <Disclosure as="nav" className="bg-gray-800">
     {({ open }) => (
       <>
+      <p onClick={()=> setcolor("blue")}> {color}</p>
         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div className="relative flex h-16 items-center justify-between">
             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -61,7 +65,7 @@ const NavBar = () => {
                    className={classNames(
                     ' text-gray-300 hover:bg-gray-700 hover:text-white',
                     'px-3 py-2 rounded-md text-sm font-medium'
-                  )}> <CartWidget/> </a>
+                  )}> <CartWidget cart={cart} setcart={setcart}/> </a>
                 </div>
               </div>
             </div>

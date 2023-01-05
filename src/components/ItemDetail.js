@@ -1,7 +1,7 @@
 import React, {useEffect,useState} from "react";
 import { useParams } from 'react-router-dom';
 import "../App.css"
-const ItemDetail = () => {
+const ItemDetail = ({cart,setcart}) => {
 const {itemId} = useParams();
 const [product, setProduct] = useState([])
 console.log (itemId)
@@ -20,7 +20,7 @@ function getProduct() {
 getProduct()
 },[])
 
-console.log (product)
+
 return (<>
 
 
@@ -43,7 +43,13 @@ return (<>
     <p>{ formatter.format(product.price)} </p>
 </div>
 <div className="buybutton">
-    <button>
+    <button onClick={() => setcart([
+        ...cart, {
+            name:product.title,
+            price: product.price,
+            image: product.image,
+        }
+    ])}>
         Agregar al carrito
     </button>
 </div>

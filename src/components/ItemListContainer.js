@@ -9,12 +9,12 @@ const ItemListConteiner = () => {
         fetch('https://fakestoreapi.com/products')
             .then(res => res.json())
             .then(r => setProducts(r))
-            .then(json => console.log(json))
+            
     }
     useEffect(() => {
         getProducts()
     }, [])
-    console.log(products)
+    
 
     return (<>
         <div className="grilla">

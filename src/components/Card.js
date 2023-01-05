@@ -1,7 +1,7 @@
 import React from "react";
 import "../App.css"
 const Card = (props) => {
-    console.log(props);
+    
     return (<>
 
         <div className="card">
