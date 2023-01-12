@@ -5,6 +5,7 @@ import './App';
 import Home from "./pages/Home"
 import Productos from "./pages/Productos"
 import ItemDetail from "./components/ItemDetail";
+import itemList from "./components/fromFirebase/ItemList";
 export const StoreContext = createContext(null);
 function App() {
 const [color,setcolor] = useState ("dark")
@@ -21,6 +22,7 @@ const [cart,setcart]= useState([])
           <Route index element={<Home />} />
           <Route path="productos" element={<Productos />}  />
           <Route path="/item/:itemId" element={<ItemDetail cart={cart} setcart={setcart}/>} />
+          <Route path="items" element={<itemList />}  />
         </Route>
       </Routes>
     </BrowserRouter>
